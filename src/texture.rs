@@ -38,7 +38,7 @@ impl Texture {
     pub fn from_memory_alpha(buf: &[u8], width: u32, height: u32) -> Result<Self, String> {
         let mut pixels = vec![];
         for alpha in buf {
-            pixels.extend(vec![255; 3]);
+            pixels.extend(vec![0; 3]);
             pixels.push(*alpha);
         }
 
